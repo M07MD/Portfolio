@@ -1,7 +1,10 @@
+// import pages
+const { default: AboutUs } = require("./pages/AboutUs");
+
 function App() {
   return (
     <div className="App">
-      <h1>Portfolio</h1>
+      <AboutUs />
     </div>
   );
 }
