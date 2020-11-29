@@ -1,8 +1,11 @@
 // import images
-import home1 from "../img/home1.jpg";
+import home1 from "../img/home1.png";
 
 // import styled
 import styled from "styled-components";
+
+// import styled components
+import { About, Description, Hide, Image } from "../styles";
 
 const AboutSection = () => {
   return (
@@ -30,43 +33,5 @@ const AboutSection = () => {
     </About>
   );
 };
-
-// Styled Component
-
-const About = styled.div`
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5rem 10rem;
-  color: #fff;
-`;
-
-const Description = styled.div`
-  flex: 1;
-  padding-right: 5rem;
-  h2 {
-    font-weight: lighter;
-  }
-`;
-
-const Image = styled.div`
-  flex: 1;
-  overflow: hidden;
-  img {
-    /* max-width: 270px; */
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(80%);
-    border-radius: 5px;
-    flex: 1;
-  }
-`;
-
-const Hide = styled.div`
-  overflow: hidden;
-`;
 
 export default AboutSection;
