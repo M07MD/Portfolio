@@ -53,7 +53,7 @@ const ServicesSection = () => {
         </Cards>
       </Description>
       <Image>
-        <img src={home2} alt="image" />
+        <img src={home2} alt="camera" />
       </Image>
     </Services>
   );
