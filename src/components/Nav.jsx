@@ -48,9 +48,26 @@ const StyledNav = styled.div`
   }
 
   #logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: "lobster", cursive;
     font-weight: lighter;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    #logo {
+      display: inline-block;
+      margin: 1rem;
+    }
+    ul {
+      padding: 2rem;
+      justify-content: space-around;
+      width: 100%;
+      li {
+        padding: 0;
+      }
+    }
   }
 `;
 

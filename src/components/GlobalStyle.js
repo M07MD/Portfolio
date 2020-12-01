@@ -8,6 +8,18 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
+html {
+    @media (max-width: 1700px) {
+        font-size: 70%;
+    }
+    @media (max-width: 1300px) {
+        font-size: 60%;
+    }
+    @media (max-width: 992px) {
+        font-size: 54%;
+    }
+}
+
 body {
     background: #1b1b1b;
     font-family: 'inter', sans-serif;
