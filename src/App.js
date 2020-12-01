@@ -11,6 +11,7 @@ import { Switch, Route } from "react-router-dom";
 const { default: AboutUs } = require("./pages/AboutUs");
 const { default: OurWork } = require("./pages/OurWork");
 const { default: ContactUs } = require("./pages/ContactUs");
+const { default: ProjectDetail } = require("./pages/ProjectDetail");
 
 function App() {
   return (
@@ -23,8 +24,12 @@ function App() {
           <AboutUs />
         </Route>
 
-        <Route path="/work">
+        <Route path="/work" exact>
           <OurWork />
+        </Route>
+
+        <Route path="/work/:id">
+          <ProjectDetail />
         </Route>
 
         <Route path="/contact">
