@@ -1,29 +1,50 @@
 // import images
 import home1 from "../img/home1.png";
 
-// import styled
-import styled from "styled-components";
-
 // import styled components
 import { About, Description, Hide, Image } from "../styles";
 
+// Framer Motion
+import { motion } from "framer-motion";
+
 const AboutSection = () => {
+  const h2Anim = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 2 } },
+  };
+
+  const titleAnim = {
+    hidden: { x: 100 },
+    show: {
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "linear",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
     <About>
       <Description>
-        <div className="title">
+        <motion.div
+          variants={titleAnim}
+          initial="hidden"
+          animate="show"
+          className="title">
           <Hide>
-            <h2>We work to make</h2>
+            <motion.h2 variants={h2Anim}>We work to make</motion.h2>
           </Hide>
           <Hide>
-            <h2>
+            <motion.h2 variants={h2Anim}>
               <span>Dreams</span> come{" "}
-            </h2>
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2>true .</h2>
+            <motion.h2 variants={h2Anim}>true .</motion.h2>
           </Hide>
-        </div>
+        </motion.div>
         <p>contact us for any web services</p>
         <button>Contact Us</button>
       </Description>
