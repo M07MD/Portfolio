@@ -10,10 +10,22 @@ import styled from "styled-components";
 
 // import styled components
 import { About, Description, Image } from "../styles";
+import { motion } from "framer-motion";
+
+import { scrollReveal } from "../animation";
+
+// useScroll
+import { useScroll } from "../useScroll";
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
+
   return (
-    <Services>
+    <Services
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      ref={element}>
       <Description>
         <h2>
           High <span>Quality</span> Services
@@ -53,7 +65,7 @@ const ServicesSection = () => {
         </Cards>
       </Description>
       <Image>
-        <img src={home2} alt="camera" />
+        <motion.img src={home2} alt="camera" />
       </Image>
     </Services>
   );

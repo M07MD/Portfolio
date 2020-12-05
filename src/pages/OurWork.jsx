@@ -19,7 +19,12 @@ import {
   sliderContainer,
 } from "../animation";
 
+import { useScroll } from "../useScroll";
+
 const OurWork = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
+
   return (
     <Work
       variants={pageAnim}
@@ -43,17 +48,25 @@ const OurWork = () => {
         </Link>
       </Project>
 
-      <Project>
+      <Project
+        ref={element}
+        variants={fade}
+        initial="hidden"
+        animate={controls}>
         <h2>The Racer</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theracer} alt="Project2" />
         </Link>
       </Project>
 
-      <Project>
+      <Project
+        ref={element2}
+        variants={fade}
+        initial="hidden"
+        animate={controls2}>
         <h2>Good Times</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
           <img src={goodtimes} alt="Project3" />
         </Link>
@@ -71,7 +84,7 @@ const Work = styled(motion.div)`
   }
 `;
 
-const Project = styled.div`
+const Project = styled(motion.div)`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;

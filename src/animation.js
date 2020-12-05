@@ -37,11 +37,9 @@ export const titleAnim = {
 export const fade = {
   hidden: {
     opacity: 0,
-    x: 50,
   },
   show: {
     opacity: 1,
-    x: 0,
     transition: {
       duration: 0.75,
       ease: "easeOut",
@@ -101,6 +99,23 @@ export const sliderContainer = {
     transition: {
       staggerChildren: 0.15,
       ease: "easeOut",
+    },
+  },
+};
+
+export const scrollReveal = {
+  hidden: {
+    opacity: 0,
+    scale: 1.2,
+    transition: {
+      duration: 0.35,
+    },
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
     },
   },
 };
