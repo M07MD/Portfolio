@@ -19,6 +19,7 @@ const ProjectDetail = () => {
   useEffect(() => {
     const currentProject = projects.filter((p) => p.url === url);
     setProject(currentProject[0]);
+    console.log(setProjects);
   }, [projects, url]);
 
   return (
@@ -78,6 +79,10 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 767px) {
+    display: block;
+    margin: 2rem 2rem;
+  }
 `;
 
 const AwardStyle = styled.div`

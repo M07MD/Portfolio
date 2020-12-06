@@ -8,9 +8,18 @@ import { About, Description, Hide, Image } from "../styles";
 import { motion } from "framer-motion";
 import { titleAnim, fade, photoAnim } from "../animation";
 
+import { useHistory } from "react-router-dom";
+
 import Wave from "./Wave";
 
 const AboutSection = () => {
+  const history = useHistory();
+
+  const buttonRedirect = () => {
+    const path = "/contact";
+    history.push(path);
+  };
+
   return (
     <About>
       <Description>
@@ -28,7 +37,9 @@ const AboutSection = () => {
           </Hide>
         </motion.div>
         <motion.p variants={fade}>contact us for any web services</motion.p>
-        <motion.button variants={fade}>Contact Us</motion.button>
+        <motion.button onClick={buttonRedirect} variants={fade}>
+          Contact Us
+        </motion.button>
       </Description>
       <Image>
         <motion.img variants={photoAnim} src={home1} alt="" />
